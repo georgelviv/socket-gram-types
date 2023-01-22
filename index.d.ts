@@ -12,8 +12,7 @@ declare namespace SocketGram {
     deviceName: string;
     id: string;
     deviceId: string;
-    accessKey: string;
-    secretKey: string;
+    deviceKey: string;
     isOnline: boolean;
   }
   
