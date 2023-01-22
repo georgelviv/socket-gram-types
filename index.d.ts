@@ -11,6 +11,7 @@ declare namespace SocketGram {
   interface Device {
     deviceName: string;
     id: string;
+    gatewayId: string;
     deviceId: string;
     deviceKey: string;
     isOnline: boolean;
