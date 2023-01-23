@@ -42,6 +42,12 @@ declare namespace SocketGram {
     power = 19,
     voltage = 20
   }
+
+  interface Gateway {
+    id: string;
+    gatewayId: string;
+    url: string;
+  }
   
 }
 
