@@ -34,7 +34,6 @@ declare namespace SocketGram {
   
   type NewUser = Omit<User, 'id'>;
   
-  
   enum SocketDP {
     turnOn = 1,
     countdown = 9,
@@ -48,6 +47,8 @@ declare namespace SocketGram {
     gatewayId: string;
     url: string;
   }
+
+  type NewGateway = Omit<Gateway, 'id'>;
   
 }
 
