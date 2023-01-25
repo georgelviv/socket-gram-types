@@ -49,7 +49,6 @@ declare namespace SocketGram {
   }
 
   type NewGateway = Omit<Gateway, 'id'>;
-  
 }
 
 
