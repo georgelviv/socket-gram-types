@@ -16,37 +16,44 @@ export const DeviceLog = z.object({
 
 export type DeviceLog = z.infer<typeof DeviceLog>;
 
-interface Device {
-  deviceName: string;
-  id: string;
-  gatewayId: string;
-  deviceId: string;
-  deviceKey: string;
-  isOnline: boolean;
-}
+export const Device = z.object({
+  deviceName: z.string().trim(),
+  id: z.string().trim(),
+  gatewayId: z.string().trim(),
+  deviceId: z.string().trim(),
+  deviceKey: z.string().trim(),
+  isOnline: z.boolean()
+});
 
-type NewDevice = Omit<Device, 'id' | 'isOnline'>;
+export type Device = z.infer<typeof Device>;
 
-interface DeviceRef {
-  id: Device['id'];
-  nameAlias: string;
-}
+export type NewDevice = Omit<Device, 'id' | 'isOnline'>;
 
-interface User {
-  id: string;
-  chatId: number;
-  devices: {
-    [deviceId: string]: DeviceRef;
-  }
-}
+export const DeviceRef = z.object({
+  id: Device.shape.id,
+  nameAlias: z.string().trim()
+});
 
-type NewUser = Omit<User, 'id'>;
+export type DeviceRef = z.infer<typeof DeviceRef>;
 
-enum SocketDP {
+export const User = z.object({
+  id: z.string().trim(),
+  chatId: z.number(),
+  devices: z.record(DeviceRef)
+});
+
+export type User = z.infer<typeof User>;
+
+export type NewUser = Omit<User, 'id'>;
+
+export enum SocketDP {
   turnOn = 1,
   countdown = 9,
   current = 18,
   power = 19,
   voltage = 20
 }
+
+export const SocketDPEnum = z.nativeEnum(SocketDP);
+export type SocketDPEnum = z.infer<typeof SocketDPEnum>;
 
