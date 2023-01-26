@@ -1,5 +1,12 @@
 {
+  "compilerOptions": {
+    "baseUrl": "./",
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "outDir": "dist"
+  },
   "files": [
-    "index.d.ts"
+    "index.ts",
   ]
 }
