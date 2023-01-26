@@ -13,7 +13,30 @@ export declare const Gateway: z.ZodObject<{
     url: string;
 }>;
 export type Gateway = z.infer<typeof Gateway>;
-export type NewGateway = Omit<Gateway, 'id'>;
+export declare const NewGateway: z.ZodObject<Omit<{
+    id: z.ZodString;
+    gatewayId: z.ZodString;
+    url: z.ZodString;
+}, "id">, "strip", z.ZodTypeAny, {
+    gatewayId: string;
+    url: string;
+}, {
+    gatewayId: string;
+    url: string;
+}>;
+export type NewGateway = z.infer<typeof NewGateway>;
+export declare const BodyNewGateway: z.ZodObject<Omit<{
+    id: z.ZodString;
+    gatewayId: z.ZodString;
+    url: z.ZodString;
+}, "url">, "strip", z.ZodTypeAny, {
+    id: string;
+    gatewayId: string;
+}, {
+    id: string;
+    gatewayId: string;
+}>;
+export type BodyNewGateway = z.infer<typeof BodyNewGateway>;
 export declare const DeviceLog: z.ZodObject<{
     timestamp: z.ZodNumber;
     isOnline: z.ZodBoolean;

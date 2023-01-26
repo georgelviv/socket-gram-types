@@ -1,12 +1,14 @@
 "use strict";
 exports.__esModule = true;
-exports.SocketDPEnum = exports.SocketDP = exports.User = exports.DeviceRef = exports.Device = exports.DeviceLog = exports.Gateway = void 0;
+exports.SocketDPEnum = exports.SocketDP = exports.User = exports.DeviceRef = exports.Device = exports.DeviceLog = exports.BodyNewGateway = exports.NewGateway = exports.Gateway = void 0;
 var zod_1 = require("zod");
 exports.Gateway = zod_1.z.object({
     id: zod_1.z.string().trim(),
     gatewayId: zod_1.z.string().trim(),
     url: zod_1.z.string().trim()
 });
+exports.NewGateway = exports.Gateway.omit({ id: true });
+exports.BodyNewGateway = exports.Gateway.omit({ url: true });
 exports.DeviceLog = zod_1.z.object({
     timestamp: zod_1.z.number(),
     isOnline: zod_1.z.boolean()

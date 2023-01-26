@@ -5,15 +5,18 @@ export const Gateway = z.object({
   gatewayId: z.string().trim(),
   url: z.string().trim()
 });
-
 export type Gateway = z.infer<typeof Gateway>;
-export type NewGateway = Omit<Gateway, 'id'>;
+
+export const NewGateway = Gateway.omit({id: true});
+export type NewGateway = z.infer<typeof NewGateway>;
+
+export const BodyNewGateway = Gateway.omit({url: true});
+export type BodyNewGateway = z.infer<typeof BodyNewGateway>
 
 export const DeviceLog = z.object({
   timestamp: z.number(),
   isOnline: z.boolean()
 });
-
 export type DeviceLog = z.infer<typeof DeviceLog>;
 
 export const Device = z.object({
@@ -24,7 +27,6 @@ export const Device = z.object({
   deviceKey: z.string().trim(),
   isOnline: z.boolean()
 });
-
 export type Device = z.infer<typeof Device>;
 
 export type NewDevice = Omit<Device, 'id' | 'isOnline'>;
