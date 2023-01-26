@@ -8,7 +8,7 @@ exports.Gateway = zod_1.z.object({
     url: zod_1.z.string().trim()
 });
 exports.NewGateway = exports.Gateway.omit({ id: true });
-exports.BodyNewGateway = exports.Gateway.omit({ url: true });
+exports.BodyNewGateway = exports.NewGateway.omit({ url: true });
 exports.DeviceLog = zod_1.z.object({
     timestamp: zod_1.z.number(),
     isOnline: zod_1.z.boolean()

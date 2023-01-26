@@ -10,7 +10,7 @@ export type Gateway = z.infer<typeof Gateway>;
 export const NewGateway = Gateway.omit({id: true});
 export type NewGateway = z.infer<typeof NewGateway>;
 
-export const BodyNewGateway = Gateway.omit({url: true});
+export const BodyNewGateway = NewGateway.omit({url: true});
 export type BodyNewGateway = z.infer<typeof BodyNewGateway>
 
 export const DeviceLog = z.object({

@@ -25,15 +25,13 @@ export declare const NewGateway: z.ZodObject<Omit<{
     url: string;
 }>;
 export type NewGateway = z.infer<typeof NewGateway>;
-export declare const BodyNewGateway: z.ZodObject<Omit<{
+export declare const BodyNewGateway: z.ZodObject<Omit<Omit<{
     id: z.ZodString;
     gatewayId: z.ZodString;
     url: z.ZodString;
-}, "url">, "strip", z.ZodTypeAny, {
-    id: string;
+}, "id">, "url">, "strip", z.ZodTypeAny, {
     gatewayId: string;
 }, {
-    id: string;
     gatewayId: string;
 }>;
 export type BodyNewGateway = z.infer<typeof BodyNewGateway>;
