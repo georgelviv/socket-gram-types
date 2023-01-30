@@ -1,6 +1,6 @@
 {
-  "name": "socket-gram-types",
-  "version": "1.0.0",
+  "name": "@georgelviv/socket-gram-types",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/georgelviv/socket-gram-types.git"
+    "url": "git://github.com/georgelviv/socket-gram-types.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "author": "",
   "license": "ISC",
