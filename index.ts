@@ -7,11 +7,8 @@ export const Gateway = z.object({
 });
 export type Gateway = z.infer<typeof Gateway>;
 
-export const NewGateway = Gateway.omit({id: true});
+export const NewGateway = Gateway.omit({ id: true });
 export type NewGateway = z.infer<typeof NewGateway>;
-
-export const BodyNewGateway = NewGateway.omit({url: true});
-export type BodyNewGateway = z.infer<typeof BodyNewGateway>
 
 export const DeviceLog = z.object({
   timestamp: z.number(),
@@ -58,4 +55,3 @@ export enum SocketDP {
 
 export const SocketDPEnum = z.nativeEnum(SocketDP);
 export type SocketDPEnum = z.infer<typeof SocketDPEnum>;
-
